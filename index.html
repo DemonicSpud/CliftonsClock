@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 <style>
 h1 {
     color:black;
@@ -8,10 +16,30 @@ h1 {
     font-family:sans-serif;
     text-align: center;   
 }
+
+h2 {
+    color:black;
+    font-size:600%;
+    font-family:sans-serif;
+    text-align: center;   
+}
+
 p  {
     color:black;
     font-family:courier;
     font-size:160%;
+}
+
+input {
+    background-color:  #F8F8FF;
+    border: 0px solid;
+	color: #3b5998;
+	text-align: center;
+	width: 600px;
+}
+table {
+	border-collapse:separate; 
+	border-spacing:0.5em;
 }
 </style>
 <script>
@@ -31,14 +59,50 @@ function checkTime(i) {
     return i;
 }
 </script>
+
 </head>
 
+
+
+
+
+
 <body onload="startTime()" >
+
+
+
 <div>
 <img src="cliftons_logo.jpg" alt="Logo" style="width:220px;height:95px">
 </div>
 <h1>
 <div id="txt" ></div>
 </h1>
+<center>
+<div> 
+
+<p>
+  <button type="button" class="btn btn-outline-light"data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>Show/Hide</strong></button>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+	  <h2>
+		<center><table>
+			<tbody>
+				<tr><td align="right">Start Time:</td><td><input type="text"></td></tr>
+				<tr><td align="right"> Finish Time:</td><td><input type="text"></td></tr>
+			</tbody>
+		</h2>
+		</table></center>
+	  </div>
+    </div>
+  </div>
+  </div>
+</div>
+</center>
+
+</div>
+
 </body>
 </html>
