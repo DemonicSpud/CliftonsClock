@@ -1,115 +1,233 @@
 <!DOCTYPE html>
 <html>
-<head>
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-<style>
-h1 {
-    color:black;
-    font-size:1800%;
-    font-family:sans-serif;
-    text-align: center;   
-}
-
-h2 {
-    color:black;
-    font-size:600%;
-    font-family:sans-serif;
-    text-align: center;   
-}
-
-div {
-	height: 100%;
-}
-
-p  {		
-    color:black;
-    font-family:courier;
-    font-size:160%;
-}
-
-
-input {
-    background-color:  #F8F8FF;
-    border: 0px solid;
-	color: #3b5998;
-	text-align: center;
-	width: 600px;
-}
-table {
-	border-collapse:separate; 
-	border-spacing:0.5em;
-}
-</style>
-<script>
-function startTime() {
-    var today=new Date();
-    var h=today.getHours();
-    var m=today.getMinutes();
-    var s=today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
-    var t = setTimeout(function(){startTime()},500);
-}
-
-function checkTime(i) {
-    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>
-
-</head>
-
-
-
-
-
-
-<body onload="startTime()" >
-
-
-
-<div>
-<img src="cliftons_logo.jpg" alt="Logo" style="width:220px;height:95px">
-</div>
-<h1>
-<div id="txt" ></div>
-</h1>
-<center>
-<div> 
-
-<p>
-  <button type="button" class="btn btn-outline-light"data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>Show/Hide</strong></button>
-</p>
-<div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body">
-	  <h2>
-		<center><table>
-			<tbody>
-				<tr><td align="right">Start Time:</td><td><input type="text"></td></tr>
-				<tr><td align="right"> Finish Time:</td><td><input type="text"></td></tr>
-			</tbody>
-		</table></center>
-		</h2>
-	  </div>
-    </div>
-  </div>
-  </div>
-</div>
-</center>
-
-</div>
-
-<!-- CLIFTONS EXAM CLOCK UPDATED AND HOSTED BY JAKE -->
-
-</body>
+   <head>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+      <style>
+         #clif {
+         margin-left: 0.5em;
+         margin-top: 0.5em;
+         }
+         h1 {
+         color:black;
+         font-size:1800%;
+         font-family:sans-serif;
+         text-align: center;   
+         }
+         h2 {
+         color:black;
+         font-size:600%;
+         font-family:sans-serif;
+         text-align: center;   
+         }
+         p  {		
+         color:black;
+         font-family:courier;
+         font-size:160%;
+         }
+         #input1 {
+         background-color:  #F8F8FF;
+         border: 0px solid;
+         color: #3b5998;
+         text-align: center;
+         width: 600px;
+         }
+         #input2 {
+         background-color:  #F8F8FF;
+         border: 0px solid;
+         color: #3b5998;
+         text-align: center;
+         width: 600px;
+         }
+         #input3 {
+         background-color:  #F8F8FF;
+         border: 0px solid;
+         color: red;
+         text-align: center;
+         width: 100%;
+         align: center;
+         }
+         table {
+         border-collapse:separate; 
+         border-spacing:0.2em;
+         }
+         .btn-group button {
+         border: 0px; /* Green border */
+         color: white; /* White text */
+         padding: 5px 5px; /* Some padding */
+         cursor: pointer; /* Pointer/hand icon */
+         width: 10%; /* Set a width if needed */
+         margin-bottom: 0.1em;
+         display: block; /* Make the buttons appear below each other */
+         }
+         .vertical-center {
+         margin: 0;
+         position: relative;
+         top: 50%;
+         -ms-transform: translateY(-5%);
+         transform: translateY(-5%);
+         }
+         #btn-blue {
+         background-color:  #3b5998;
+         border-radius: 50%;	
+         }
+         #btn-red {
+         background-color:  red;	
+         border-radius: 50%;
+         }
+         #btn-green {
+         background-color:  green;
+         border-radius: 50%;
+         }
+         #btn-black {
+         background-color:  black;	
+         border-radius: 50%;
+         }
+         .btn-group button:not(:last-child) {
+         border-bottom: none; /* Prevent double borders */
+         }
+      </style>
+      <script>
+         function startTime() {
+             var today=new Date();
+             var h=today.getHours();
+             var m=today.getMinutes();
+             var s=today.getSeconds();
+             m = checkTime(m);
+             s = checkTime(s);
+             document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+             var t = setTimeout(function(){startTime()},500);
+         }
+         
+         function checkTime(i) {
+             if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+             return i;
+         }
+         
+         function startBlue(){
+         	document.getElementById("input1").style.color = '#3b5998';
+         }
+         function startRed(){
+         	document.getElementById("input1").style.color = 'red';
+         }
+         function startGreen(){
+         	document.getElementById("input1").style.color = 'green';
+         }
+         function startBlack(){
+         	document.getElementById("input1").style.color = 'black';
+         }
+         
+         function finishBlue(){
+         	document.getElementById("input2").style.color = '#3b5998';
+         }
+         function finishRed(){
+         	document.getElementById("input2").style.color = 'red';
+         }
+         function finishGreen(){
+         	document.getElementById("input2").style.color = 'green';
+         }
+         function finishBlack(){
+         	document.getElementById("input2").style.color = 'black';
+         }
+         
+         
+         function commentBlue(){
+         	document.getElementById("input3").style.color = '#3b5998';
+         }
+         function commentRed(){
+         	document.getElementById("input3").style.color = 'red';
+         }
+         function commentGreen(){
+         	document.getElementById("input3").style.color = 'green';
+         }
+         function commentBlack(){
+         	document.getElementById("input3").style.color = 'black';
+         }
+         
+      </script>
+      <div>
+         <img id="clif" src="cliftons_logo.jpg" alt="Logo" style="width:220px;height:95px">
+      </div>
+   </head>
+   <body onload="startTime()" >
+      <h1>
+         <div id="txt" ></div>
+      </h1>
+      <center>
+         <div>
+            <p>
+               <button type="button" class="btn btn-outline-light"data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>Show/Hide</strong></button>
+            </p>
+            <div class="row">
+               <div class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                     <div class="card card-body">
+                        <h2>
+                           <center>
+                              <table>
+                                 <tbody>
+                                    <tr>
+                                       <td align="right">Start Time:</td>
+                                       <td><input  id="input1" type="text"></td>
+                                       <td>
+                                          <div class="vertical-center">
+                                             <div class="btn-group">
+                                                <button id="btn-blue" onclick="startBlue();"></button>
+                                                <button id="btn-red" onclick="startRed();"></button>
+                                                <button id="btn-green" onclick="startGreen();"></button>
+                                                <button id="btn-black" onclick="startBlack();"></button>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td align="right"> Finish Time:</td>
+                                       <td><input id="input2" type="text"></td>
+                                       <td>
+                                          <div class="vertical-center">
+                                             <div class="btn-group">
+                                                <button id="btn-blue" onclick="finishBlue();"></button>
+                                                <button id="btn-red" onclick="finishRed();"></button>
+                                                <button id="btn-green" onclick="finishGreen();"></button>
+                                                <button id="btn-black" onclick="finishBlack();"></button>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td colspan="2"><input id="input3" type="text"></td>
+                                       <td>
+                                          <div class="vertical-center">
+                                             <div class="btn-group">
+                                                <button id="btn-blue" onclick="commentBlue();"></button>
+                                                <button id="btn-red" onclick="commentRed();"></button>
+                                                <button id="btn-green" onclick="commentGreen();"></button>
+                                                <button id="btn-black" onclick="commentBlack();"></button>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </center>
+                           <center>
+                              <table>
+                                 <tbody>
+                                 </tbody>
+                              </table>
+                           </center>
+                        </h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </center>
+      </div>
+      <!-- CLIFTONS EXAM CLOCK UPDATED AND HOSTED BY JAKE SMITH @ CLIFTONS BRISBANE -->
+   </body>
 </html>
