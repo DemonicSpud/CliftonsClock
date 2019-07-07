@@ -91,13 +91,19 @@
          }
       </style>
       <script>
+		  
+		 var twentyfourHR = true;
          function startTime() {
              var today=new Date();
              var h=today.getHours();
              var m=today.getMinutes();
              var s=today.getSeconds();
-             m = checkTime(m);
-             s = checkTime(s);
+			 if (twentyfourHR == false){
+			 	h = checkTime12(h);
+			 } 
+			 m = checkTime(m);
+			 s = checkTime(s);
+             
              document.getElementById('txt').innerHTML = h+":"+m+":"+s;
              var t = setTimeout(function(){startTime()},500);
          }
@@ -106,6 +112,27 @@
              if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
              return i;
          }
+		  
+		 function checkTime12(i) {
+             if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+			 if (i>12) { 
+				i = "0" + i - 12; 
+				return i;
+			 }
+			 else { return i;}
+         }
+		 
+		function switchTime(){
+			if (twentyfourHR == true){ 
+				twentyfourHR = false;
+				document.getElementById('time').innerHTML = "<strong>12 hour</strong>";
+			}
+			else {
+				twentyfourHR = true;
+				document.getElementById('time').innerHTML = "<strong>24 hour</strong>"; 
+			}
+			startTime();
+		}
          
          function startBlue(){
          	document.getElementById("input1").style.color = '#3b5998';
@@ -153,7 +180,7 @@
          <img id="clif" src="cliftons_logo.jpg" alt="Logo" style="width:220px;height:95px">
       </div>
    </head>
-   <body onload="startTime()" >
+   <body onload="startTime()" id="bodyTime" >
       <h1>
          <div id="txt" ></div>
       </h1>
@@ -161,7 +188,9 @@
          <div>
             <p>
                <button type="button" class="btn btn-outline-light"data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>Show/Hide</strong></button>
-            </p>
+            	<button type="button" id="time" onclick="switchTime();" class="btn btn-outline-light" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>24 hour</strong></button>
+            
+			 </p>
             <div class="row">
                <div class="col">
                   <div class="collapse multi-collapse" id="multiCollapseExample1">
@@ -228,6 +257,6 @@
          </div>
       </center>
       </div>
-      <!-- CLIFTONS EXAM CLOCK UPDATED AND HOSTED BY JAKE SMITH @ CLIFTONS BRISBANE -->
+      <!-- CLIFTONS EXAM CLOCK CREATED AND HOSTED BY JAKE SMITH @ CLIFTONS BRISBANE -->
    </body>
 </html>
