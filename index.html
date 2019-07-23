@@ -20,6 +20,12 @@
          font-family:sans-serif;
          text-align: center;   
          }
+
+         #fixedbutton {
+            position: fixed;
+            bottom: 5px;
+            right: 5px; 
+         }
          
          .row {
             margin-right: -0px;
@@ -170,6 +176,7 @@
       <script>
 		  
 		 var twentyfourHR = true;
+       var dark=false;
          function startTime() {
              var today=new Date();
              var h=today.getHours();
@@ -214,6 +221,54 @@
 			}
 			startTime();
 		}
+
+      function switchMode(){
+         if (dark == false){
+            // Switch to dark
+            dark = true;
+            document.body.style.background = "#404040";
+            document.getElementById("txt").style.color = "White";
+            document.getElementById("show").style.background = "#505050";
+            document.getElementById("time").style.background = "#505050";
+            document.getElementById("show").style.color = "LightGray";
+            document.getElementById("time").style.color = "LightGray";
+            document.getElementById("normText").style.color = "white";
+            document.getElementById("normText2").style.color = "white";
+            document.getElementById("input1").style.background = "#454545";
+            document.getElementById("input2").style.background = "#454545";
+            document.getElementById("input3").style.background = "#454545";
+            document.getElementsByName("g1b").style.background = "#BB86FC";
+            document.getElementsByName("g2b").style.background = "#BB86FC";
+            document.getElementsByName("g3b").style.background = "#BB86FC";
+            document.getElementByID("btn-black").style.background = "white";
+            document.getElementsByName("g1r").style.background = "#FF0266";
+            document.getElementsByName("g2r").style.background = "#FF0266";
+            document.getElementsByName("g3r").style.background = "#FF0266";
+            document.getElementsByName("g1g").style.background = "#3700B3";
+            document.getElementsByName("g2g").style.background = "#3700B3";
+            document.getElementsByName("g3g").style.color = "#3700B3";
+            
+            
+
+         } else {
+            // Switch to light
+            dark = false;
+            document.body.style.background = "white";
+            document.getElementById("txt").style.color = "black";
+            document.getElementById("show").style.background = "#DDDDDD";
+            document.getElementById("time").style.background = "#DDDDDD";
+            document.getElementById("show").style.color = "black";
+            document.getElementById("time").style.color = "black";
+            document.getElementById("normText").style.color = "black";
+            document.getElementById("normText2").style.color = "black";
+            document.getElementById("input1").style.background = "#F8F8FF";
+            document.getElementById("input2").style.background = "#F8F8FF";
+            document.getElementById("input3").style.background = "#F8F8FF";
+            
+         }
+
+
+      }
          
          function startBlue(){
          	document.getElementById("input1").style.color = '#3b5998';
@@ -228,6 +283,22 @@
          	document.getElementById("input1").style.color = 'black';
          }
          
+         function startDarkBlue(){
+         	document.getElementById("input1").style.color = '#BB86FC';
+         }
+         function startDarkRed(){
+         	document.getElementById("input1").style.color = '#FF0266';
+         }
+         function startDarkGreen(){
+         	document.getElementById("input1").style.color = '#3700B3';
+         }
+         function startWhite(){
+         	document.getElementById("input1").style.color = 'white';
+         }
+         
+
+
+
          function finishBlue(){
          	document.getElementById("input2").style.color = '#3b5998';
          }
@@ -239,6 +310,19 @@
          }
          function finishBlack(){
          	document.getElementById("input2").style.color = 'black';
+         }
+
+         function finishDarkBlue(){
+         	document.getElementById("input2").style.color = '#BB86FC';
+         }
+         function finishDarkRed(){
+         	document.getElementById("input2").style.color = '#FF0266';
+         }
+         function finishDarkGreen(){
+         	document.getElementById("input2").style.color = '#3700B3';
+         }
+         function finishWhite(){
+         	document.getElementById("input2").style.color = 'white';
          }
          
          
@@ -255,6 +339,19 @@
          	document.getElementById("input3").style.color = 'black';
          }
          
+         function commentDarkBlue(){
+         	document.getElementById("input3").style.color = '#BB86FC';
+         }
+         function commentDarkRed(){
+         	document.getElementById("input3").style.color = '#FF0266';
+         }
+         function commentDarkGreen(){
+         	document.getElementById("input3").style.color = '#3700B3';
+         }
+         function commentWhite(){
+         	document.getElementById("input3").style.color = 'white';
+         }
+
       </script>
 	  <title>Cliftons Clock</title>
       <div>
@@ -281,29 +378,29 @@
                               <table>
                                  <tbody>
                                     <tr>
-                                       <td align="right">Start Time:</td>
+                                       <td align="right" id="normText">Start Time:</td>
                                        <td><input  id="input1" type="text"></td>
                                        <td>
                                           <div class="vertical-center">
                                              <div class="btn-group">
-                                                <button id="btn-blue" onclick="startBlue();"></button>
-                                                <button id="btn-red" onclick="startRed();"></button>
-                                                <button id="btn-green" onclick="startGreen();"></button>
-                                                <button id="btn-black" onclick="startBlack();"></button>
+                                                <button name="g1b" id="btn-blue" onclick="startBlue();"></button>
+                                                <button name="g1r" id="btn-red" onclick="startRed();"></button>
+                                                <button name="g1g" id="btn-green" onclick="startGreen();"></button>
+                                                <button name="g1bl" id="btn-black" onclick="startBlack();"></button>
                                              </div>
                                           </div>
                                        </td>
                                     </tr>
                                     <tr>
-                                       <td align="right"> Finish Time:</td>
+                                       <td align="right" id="normText2"> Finish Time:</td>
                                        <td><input id="input2" type="text"></td>
                                        <td>
                                           <div class="vertical-center">
                                              <div class="btn-group">
-                                                <button id="btn-blue" onclick="finishBlue();"></button>
-                                                <button id="btn-red" onclick="finishRed();"></button>
-                                                <button id="btn-green" onclick="finishGreen();"></button>
-                                                <button id="btn-black" onclick="finishBlack();"></button>
+                                                <button name="g2b" id="btn-blue" onclick="finishBlue();"></button>
+                                                <button name="g2r" id="btn-red" onclick="finishRed();"></button>
+                                                <button name="g2g" id="btn-green" onclick="finishGreen();"></button>
+                                                <button name="g2bl" id="btn-black" onclick="finishBlack();"></button>
                                              </div>
                                           </div>
                                        </td>
@@ -313,10 +410,10 @@
                                        <td>
                                           <div class="vertical-center">
                                              <div class="btn-group">
-                                                <button id="btn-blue" onclick="commentBlue();"></button>
-                                                <button id="btn-red" onclick="commentRed();"></button>
-                                                <button id="btn-green" onclick="commentGreen();"></button>
-                                                <button id="btn-black" onclick="commentBlack();"></button>
+                                                <button name="g3b" id="btn-blue" onclick="commentBlue();"></button>
+                                                <button name="g3r" id="btn-red" onclick="commentRed();"></button>
+                                                <button name="g3g" id="btn-green" onclick="commentGreen();"></button>
+                                                <button name="g3bl" id="btn-black" onclick="commentBlack();"></button>
                                              </div>
                                           </div>
                                        </td>
@@ -342,4 +439,7 @@
 	LinkedIn: linkedin.com/in/jakesmithqut/
 	-->
    </body>
+   <footer>
+      <button type="button" id="fixedbutton" class="btn btn-outline-light" onclick = "switchMode()" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>Mode</strong></button>  
+   </footer>
 </html>
