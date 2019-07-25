@@ -225,6 +225,7 @@
       function switchMode(){
          if (dark == false){
             // Switch to dark
+            document.getElementById("clif").src = "cliftons_logo_dark.png";
             dark = true;
             document.body.style.background = "#404040";
             document.getElementById("txt").style.color = "White";
@@ -252,6 +253,7 @@
 
          } else {
             // Switch to light
+            document.getElementById("clif").src = "cliftons_logo_light.png";
             dark = false;
             document.body.style.background = "white";
             document.getElementById("txt").style.color = "black";
@@ -355,7 +357,7 @@
       </script>
 	  <title>Cliftons Clock</title>
       <div>
-         <img id="clif" src="cliftons_logo.jpg" alt="Logo" style="width:220px;height:95px">
+         <img id="clif" src="cliftons_logo_light.png" alt="Logo" style="width:240px;height:95px">
       </div>
    </head>
    <body onload="startTime()" id="bodyTime" >
