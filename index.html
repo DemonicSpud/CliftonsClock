@@ -226,6 +226,7 @@
          if (dark == false){
             // Switch to dark
             document.getElementById("clif").src = "cliftons_logo_dark.png";
+            document.getElementById("fixedbutton").src = "moon.png";
             dark = true;
             document.body.style.background = "#404040";
             document.getElementById("txt").style.color = "White";
@@ -238,22 +239,29 @@
             document.getElementById("input1").style.background = "#454545";
             document.getElementById("input2").style.background = "#454545";
             document.getElementById("input3").style.background = "#454545";
-            document.getElementsByName("g1b").style.background = "#BB86FC";
-            document.getElementsByName("g2b").style.background = "#BB86FC";
-            document.getElementsByName("g3b").style.background = "#BB86FC";
-            document.getElementByID("btn-black").style.background = "white";
-            document.getElementsByName("g1r").style.background = "#FF0266";
-            document.getElementsByName("g2r").style.background = "#FF0266";
-            document.getElementsByName("g3r").style.background = "#FF0266";
-            document.getElementsByName("g1g").style.background = "#3700B3";
-            document.getElementsByName("g2g").style.background = "#3700B3";
-            document.getElementsByName("g3g").style.color = "#3700B3";
             
+            // Buttons
+            document.getElementsByName("g1b")[0].style.background = "#BB86FC";
+            document.getElementsByName("g2b")[0].style.background = "#BB86FC";
+            document.getElementsByName("g3b")[0].style.background = "#BB86FC";
+            document.getElementsByName("g1r")[0].style.background = "#FF0266";
+            document.getElementsByName("g2r")[0].style.background = "#FF0266";
+            document.getElementsByName("g3r")[0].style.background = "#FF0266";
+            document.getElementsByName("g1g")[0].style.background = "#03DAC5";
+            document.getElementsByName("g2g")[0].style.background = "#03DAC5";
+            document.getElementsByName("g3g")[0].style.background = "#03DAC5";
+            document.getElementsByName("g1bl")[0].style.background = "white";
+            document.getElementsByName("g2bl")[0].style.background = "white";
+            document.getElementsByName("g3bl")[0].style.background = "white";
             
+            document.getElementById("input1").style.color = '#BB86FC';
+            document.getElementById("input2").style.color = '#BB86FC';
+            document.getElementById("input3").style.color = '#03DAC5';
 
          } else {
             // Switch to light
             document.getElementById("clif").src = "cliftons_logo_light.png";
+            document.getElementById("fixedbutton").src = "sun.png";
             dark = false;
             document.body.style.background = "white";
             document.getElementById("txt").style.color = "black";
@@ -266,93 +274,120 @@
             document.getElementById("input1").style.background = "#F8F8FF";
             document.getElementById("input2").style.background = "#F8F8FF";
             document.getElementById("input3").style.background = "#F8F8FF";
+            // Buttons
             
-         }
+            document.getElementsByName("g1b")[0].style.background = "#3b5998";
+            document.getElementsByName("g2b")[0].style.background = "#3b5998";
+            document.getElementsByName("g3b")[0].style.background = "#3b5998";
+            document.getElementsByName("g1r")[0].style.background = "red";
+            document.getElementsByName("g2r")[0].style.background = "red";
+            document.getElementsByName("g3r")[0].style.background = "red";
+            document.getElementsByName("g1g")[0].style.background = "green";
+            document.getElementsByName("g2g")[0].style.background = "green";
+            document.getElementsByName("g3g")[0].style.background = "green";
+            document.getElementsByName("g1bl")[0].style.background = "Black";
+            document.getElementsByName("g2bl")[0].style.background = "Black";
+            document.getElementsByName("g3bl")[0].style.background = "Black";
 
-
+            document.getElementById("input1").style.color = '#3b5998';
+            document.getElementById("input2").style.color = '#3b5998';
+            document.getElementById("input3").style.color = 'green';
+      }
       }
          
          function startBlue(){
-         	document.getElementById("input1").style.color = '#3b5998';
+            if (dark == false){
+               document.getElementById("input1").style.color = '#3b5998';
+            } else {
+               document.getElementById("input1").style.color = '#BB86FC';
+            }
          }
+         
          function startRed(){
-         	document.getElementById("input1").style.color = 'red';
+         	if (dark == false){
+               document.getElementById("input1").style.color = 'red';
+            } else {
+               document.getElementById("input1").style.color = '#FF0266';
+            }
          }
          function startGreen(){
-         	document.getElementById("input1").style.color = 'green';
+         	if (dark == false){
+               document.getElementById("input1").style.color = 'green';
+            } else {
+               document.getElementById("input1").style.color = '#03DAC5';
+            }
          }
          function startBlack(){
-         	document.getElementById("input1").style.color = 'black';
+         	if (dark == false){
+               document.getElementById("input1").style.color = 'black';
+            } else {
+               document.getElementById("input1").style.color = 'white';
+            }
          }
-         
-         function startDarkBlue(){
-         	document.getElementById("input1").style.color = '#BB86FC';
-         }
-         function startDarkRed(){
-         	document.getElementById("input1").style.color = '#FF0266';
-         }
-         function startDarkGreen(){
-         	document.getElementById("input1").style.color = '#3700B3';
-         }
-         function startWhite(){
-         	document.getElementById("input1").style.color = 'white';
-         }
-         
+
 
 
 
          function finishBlue(){
-         	document.getElementById("input2").style.color = '#3b5998';
+            if (dark == false){
+               document.getElementById("input2").style.color = '#3b5998';
+            } else {
+               document.getElementById("input2").style.color = '#BB86FC';
+            }
          }
          function finishRed(){
-         	document.getElementById("input2").style.color = 'red';
+         	if (dark == false){
+               document.getElementById("input2").style.color = 'red';
+            } else {
+               document.getElementById("input2").style.color = '#FF0266';
+            }
          }
          function finishGreen(){
-         	document.getElementById("input2").style.color = 'green';
+         	if (dark == false){
+               document.getElementById("input2").style.color = 'green';
+            } else {
+               document.getElementById("input2").style.color = '#03DAC5';
+            }
          }
          function finishBlack(){
-         	document.getElementById("input2").style.color = 'black';
+         	if (dark == false){
+               document.getElementById("input2").style.color = 'black';
+            } else {
+               document.getElementById("input2").style.color = 'white';
+            }
          }
 
-         function finishDarkBlue(){
-         	document.getElementById("input2").style.color = '#BB86FC';
-         }
-         function finishDarkRed(){
-         	document.getElementById("input2").style.color = '#FF0266';
-         }
-         function finishDarkGreen(){
-         	document.getElementById("input2").style.color = '#3700B3';
-         }
-         function finishWhite(){
-         	document.getElementById("input2").style.color = 'white';
-         }
-         
          
          function commentBlue(){
-         	document.getElementById("input3").style.color = '#3b5998';
+            if (dark == false){
+               document.getElementById("input3").style.color = '#3b5998';
+            } else {
+               document.getElementById("input3").style.color = '#BB86FC';
+            }
          }
          function commentRed(){
-         	document.getElementById("input3").style.color = 'red';
+         	if (dark == false){
+               document.getElementById("input3").style.color = 'red';
+            } else {
+               document.getElementById("input3").style.color = '#FF0266';
+            }
          }
          function commentGreen(){
-         	document.getElementById("input3").style.color = 'green';
+         	if (dark == false){
+               document.getElementById("input3").style.color = 'green';
+            } else {
+               document.getElementById("input3").style.color = '#03DAC5';
+            }
          }
          function commentBlack(){
-         	document.getElementById("input3").style.color = 'black';
+         	if (dark == false){
+               document.getElementById("input3").style.color = 'black';
+            } else {
+               document.getElementById("input3").style.color = 'white';
+            }
          }
          
-         function commentDarkBlue(){
-         	document.getElementById("input3").style.color = '#BB86FC';
-         }
-         function commentDarkRed(){
-         	document.getElementById("input3").style.color = '#FF0266';
-         }
-         function commentDarkGreen(){
-         	document.getElementById("input3").style.color = '#3700B3';
-         }
-         function commentWhite(){
-         	document.getElementById("input3").style.color = 'white';
-         }
+
 
       </script>
 	  <title>Cliftons Clock</title>
@@ -442,6 +477,6 @@
 	-->
    </body>
    <footer>
-      <button type="button" id="fixedbutton" class="btn btn-outline-light" onclick = "switchMode()" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><strong>Mode</strong></button>  
+      <img type="button" src="sun.png" style="width:50px;height:35px" id="fixedbutton" class="btn btn-outline-light" onclick = "switchMode()" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"></img>  
    </footer>
 </html>
